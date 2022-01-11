@@ -6,7 +6,7 @@ An random anime quote app I made for fun.
 
 ## Preview
 
-
+https://user-images.githubusercontent.com/67658540/149021618-7259a4d6-592a-456c-abb9-fe8e681b994f.mp4
 
 ## Features
 
