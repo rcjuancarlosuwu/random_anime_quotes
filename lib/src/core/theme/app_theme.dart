@@ -2,40 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:random_anime_quotes/src/core/constants/constants.dart';
-
 import 'theme_option.dart';
 
-class KawaiiTheme {
-  KawaiiTheme._();
+const primaryColor = Color(0xff202053);
 
-  static ThemeData shiro([Color color = kDefaultColor]) => ThemeData(
-      primaryColor: color,
-      appBarTheme: AppBarTheme(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        iconTheme: const IconThemeData(color: kDefaultColor),
-        titleTextStyle: GoogleFonts.montserrat(
-          color: color,
-          fontSize: 22,
-          fontWeight: FontWeight.w600,
-          letterSpacing: .5,
-        ),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarIconBrightness: Brightness.dark,
-          statusBarColor: Colors.transparent,
-        ),
-      ),
-      scaffoldBackgroundColor: Colors.white,
-      textTheme: textTheme(),
-      snackBarTheme: const SnackBarThemeData(
-        backgroundColor: Colors.white70,
-        actionTextColor: Colors.black,
-      ),
-      iconTheme: const IconThemeData(color: kDefaultColor));
+class AppTheme {
+  AppTheme._();
 
-  static ThemeData kuro([Color color = kDefaultColor]) => ThemeData(
+  static ThemeData light(Color color) => ThemeData.light().copyWith(
+        primaryColor: color,
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          iconTheme: const IconThemeData(color: primaryColor),
+          titleTextStyle: GoogleFonts.montserrat(
+            color: color,
+            fontSize: 22,
+            fontWeight: FontWeight.w600,
+            letterSpacing: .5,
+          ),
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.dark,
+            statusBarColor: Colors.transparent,
+          ),
+        ),
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: textTheme(),
+        snackBarTheme: const SnackBarThemeData(
+          backgroundColor: Colors.white70,
+          actionTextColor: Colors.black,
+        ),
+        iconTheme: const IconThemeData(color: primaryColor),
+      );
+
+  static ThemeData dark(Color color) => ThemeData.dark().copyWith(
         primaryColor: color,
         appBarTheme: AppBarTheme(
           elevation: 0,
@@ -62,7 +63,7 @@ class KawaiiTheme {
         iconTheme: const IconThemeData(color: Colors.white),
       );
 
-  static TextTheme textTheme([Color color = kDefaultColor]) => TextTheme(
+  static TextTheme textTheme([Color color = primaryColor]) => TextTheme(
         caption: GoogleFonts.montserrat(
           fontSize: 12,
           fontWeight: FontWeight.w400,
@@ -115,7 +116,7 @@ class KawaiiTheme {
   ];
 
   static List<Color> colors = [
-    kDefaultColor,
+    primaryColor,
     Colors.indigoAccent,
     Colors.blueAccent,
     Colors.lightBlueAccent,

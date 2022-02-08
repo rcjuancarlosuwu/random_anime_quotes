@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:random_anime_quotes/src/features/quotes/logic/providers.dart';
 import 'package:screenshot/screenshot.dart';
 
 import 'package:random_anime_quotes/src/core/animations/animations.dart';
-import 'package:random_anime_quotes/src/features/quotes/logic/quote_provider.dart';
 import 'package:random_anime_quotes/src/core/extensions/text_theme_styles_x.dart';
 
 import 'shimmers.dart';
@@ -48,6 +48,7 @@ class _QuoteBody extends ConsumerWidget {
             final fontSize = length > 120 ? 12.5 : 34 - (length * 0.1969);
 
             return SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   const TranslateAnimation(
@@ -72,9 +73,6 @@ class _QuoteBody extends ConsumerWidget {
             );
           },
           loading: () => const Center(child: QuoteShimmer()),
-          error: (_) => Center(
-            child: Image.asset('assets/images/disconnected.png'),
-          ),
         );
   }
 }
@@ -102,17 +100,7 @@ class _QuoteFooter extends ConsumerWidget {
               ),
             ],
           ),
-          loading: () => const Center(child: AuthorShimmer()),
-          error: (_) => Center(
-            child: Text(
-              'Oops! No Internet\nConnection',
-              textAlign: TextAlign.center,
-              style: context.headline1.copyWith(
-                fontSize: 28,
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-          ),
+          loading: () => const Center(child: AnimeCharacterShimmer()),
         );
   }
 }

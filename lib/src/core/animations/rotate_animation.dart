@@ -3,7 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RotateAnimation extends StatelessWidget {
-  const RotateAnimation({Key? key, required this.child}) : super(key: key);
+  const RotateAnimation({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
 
   final Widget child;
 

@@ -2,35 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 import 'package:random_anime_quotes/src/core/constants/constants.dart';
+import 'package:random_anime_quotes/src/core/theme/app_theme.dart';
 
 abstract class ISettingsLocalDataSource {
-  Color getPrimaryColor();
-  void savePrimaryColor(Color color);
+  Color getThemeColor();
+  void saveThemeColor(Color color);
   ThemeMode getThemeMode();
   void saveThemeMode(ThemeMode themeMode);
   String getTranslateCode();
   void saveTranslateCode(String code);
 }
 
-const _primaryColorKey = 'primaryColor';
-const _themeModeKey = 'themeData';
-const _translateCodeKey = 'translateCode';
+const _themeColorKey = 'themeColorKey';
+const _themeModeKey = 'themeDataKey';
+const _translateCodeKey = 'translateCodeKey';
 
 class SettingsLocalDataSource implements ISettingsLocalDataSource {
-  SettingsLocalDataSource(this.box);
+  SettingsLocalDataSource({
+    required this.box,
+  });
 
   final Box box;
 
   @override
-  Color getPrimaryColor() {
-    final int value =
-        box.get(_primaryColorKey, defaultValue: kDefaultColor.value);
+  Color getThemeColor() {
+    final int value = box.get(
+      _themeColorKey,
+      defaultValue: primaryColor.value,
+    );
     return Color(value);
   }
 
   @override
-  void savePrimaryColor(Color color) {
-    box.put(_primaryColorKey, color.value);
+  void saveThemeColor(Color color) {
+    box.put(_themeColorKey, color.value);
   }
 
   @override
@@ -45,7 +50,7 @@ class SettingsLocalDataSource implements ISettingsLocalDataSource {
 
   @override
   String getTranslateCode() {
-    return box.get(_translateCodeKey, defaultValue: kDefaultTranslationCode);
+    return box.get(_translateCodeKey, defaultValue: defaultTranslationCode);
   }
 
   @override

@@ -75,8 +75,8 @@ class QuoteShimmer extends StatelessWidget {
   }
 }
 
-class AuthorShimmer extends StatelessWidget {
-  const AuthorShimmer({Key? key}) : super(key: key);
+class AnimeCharacterShimmer extends StatelessWidget {
+  const AnimeCharacterShimmer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

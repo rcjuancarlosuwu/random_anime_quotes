@@ -14,11 +14,9 @@ class TranslateAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final start = x > 0;
-
     return TweenAnimationBuilder<double>(
-      tween: Tween(begin: start ? 0 : 1, end: start ? 1 : 0),
-      duration: Duration(milliseconds: start ? 750 : 400),
+      tween: Tween(begin: x > 0 ? 0 : 1, end: x > 0 ? 1 : 0),
+      duration: Duration(milliseconds: x > 0 ? 750 : 400),
       curve: Curves.easeInOutBack,
       builder: (_, value, child) => Transform.translate(
         offset: Offset(x * value, y * value),

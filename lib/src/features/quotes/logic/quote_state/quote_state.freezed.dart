@@ -27,12 +27,6 @@ class _$QuoteStateTearOff {
   _Loading loading() {
     return const _Loading();
   }
-
-  _Error error(String message) {
-    return _Error(
-      message,
-    );
-  }
 }
 
 /// @nodoc
@@ -44,21 +38,18 @@ mixin _$QuoteState {
   TResult when<TResult extends Object?>({
     required TResult Function(Quote quote) data,
     required TResult Function() loading,
-    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Quote quote)? data,
     TResult Function()? loading,
-    TResult Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Quote quote)? data,
     TResult Function()? loading,
-    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,21 +57,18 @@ mixin _$QuoteState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,8 +95,6 @@ abstract class _$DataCopyWith<$Res> {
   factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
       __$DataCopyWithImpl<$Res>;
   $Res call({Quote quote});
-
-  $QuoteCopyWith<$Res> get quote;
 }
 
 /// @nodoc
@@ -130,13 +116,6 @@ class __$DataCopyWithImpl<$Res> extends _$QuoteStateCopyWithImpl<$Res>
           : quote // ignore: cast_nullable_to_non_nullable
               as Quote,
     ));
-  }
-
-  @override
-  $QuoteCopyWith<$Res> get quote {
-    return $QuoteCopyWith<$Res>(_value.quote, (value) {
-      return _then(_value.copyWith(quote: value));
-    });
   }
 }
 
@@ -183,7 +162,6 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   TResult when<TResult extends Object?>({
     required TResult Function(Quote quote) data,
     required TResult Function() loading,
-    required TResult Function(String message) error,
   }) {
     return data(quote);
   }
@@ -193,7 +171,6 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Quote quote)? data,
     TResult Function()? loading,
-    TResult Function(String message)? error,
   }) {
     return data?.call(quote);
   }
@@ -203,7 +180,6 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Quote quote)? data,
     TResult Function()? loading,
-    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -217,7 +193,6 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   TResult map<TResult extends Object?>({
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
   }) {
     return data(this);
   }
@@ -227,7 +202,6 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
   }) {
     return data?.call(this);
   }
@@ -237,7 +211,6 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -301,7 +274,6 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function(Quote quote) data,
     required TResult Function() loading,
-    required TResult Function(String message) error,
   }) {
     return loading();
   }
@@ -311,7 +283,6 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Quote quote)? data,
     TResult Function()? loading,
-    TResult Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -321,7 +292,6 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Quote quote)? data,
     TResult Function()? loading,
-    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -335,7 +305,6 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -345,7 +314,6 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -355,7 +323,6 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -367,148 +334,4 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
 
 abstract class _Loading implements QuoteState {
   const factory _Loading() = _$_Loading;
-}
-
-/// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$QuoteStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
-
-  @override
-  _Error get _value => super._value as _Error;
-
-  @override
-  $Res call({
-    Object? message = freezed,
-  }) {
-    return _then(_Error(
-      message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Error with DiagnosticableTreeMixin implements _Error {
-  const _$_Error(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'QuoteState.error(message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuoteState.error'))
-      ..add(DiagnosticsProperty('message', message));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Error &&
-            const DeepCollectionEquality().equals(other.message, message));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
-
-  @JsonKey(ignore: true)
-  @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Quote quote) data,
-    required TResult Function() loading,
-    required TResult Function(String message) error,
-  }) {
-    return error(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Quote quote)? data,
-    TResult Function()? loading,
-    TResult Function(String message)? error,
-  }) {
-    return error?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Quote quote)? data,
-    TResult Function()? loading,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Data value) data,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Data value)? data,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data value)? data,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Error implements QuoteState {
-  const factory _Error(String message) = _$_Error;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
 }

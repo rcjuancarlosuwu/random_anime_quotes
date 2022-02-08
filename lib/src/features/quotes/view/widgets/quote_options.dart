@@ -4,7 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:random_anime_quotes/src/core/animations/animations.dart';
 import 'package:random_anime_quotes/src/features/quotes/data/models/quote.dart';
-import 'package:random_anime_quotes/src/features/quotes/logic/quote_provider.dart';
+import 'package:random_anime_quotes/src/features/quotes/logic/providers.dart';
+import 'package:random_anime_quotes/src/features/quotes/logic/state_notifiers/quote_notifier.dart';
 
 class QuoteOptions extends StatelessWidget {
   const QuoteOptions({Key? key}) : super(key: key);
@@ -100,12 +101,6 @@ class _HeartIconButton extends ConsumerWidget {
                 strokeWidth: 1.5,
                 color: Colors.white,
               ),
-            ),
-            error: (_) => IconButton(
-              onPressed: () {
-                ref.read(quoteProvider.notifier).getQuote();
-              },
-              icon: const Icon(CupertinoIcons.refresh, color: Colors.white),
             ),
           ),
     );

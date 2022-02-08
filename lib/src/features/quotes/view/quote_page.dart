@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:random_anime_quotes/src/core/constants/constants.dart';
+import 'package:random_anime_quotes/src/core/constants/constants.dart'
+    show appName;
 
 import 'widgets/widgets.dart';
 
@@ -11,7 +12,7 @@ class QuotesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(kAppName),
+        title: const Text(appName),
         actions: const [SettingsButton()],
       ),
       body: Column(
@@ -29,33 +30,3 @@ class QuotesPage extends StatelessWidget {
     );
   }
 }
-
-/*
-Text('Hi there, Senpai!', style: context.headline4),
-const SizedBox(height: 5),
-Text(
-  'Would you like to have dinner?',
-  textAlign: TextAlign.start,
-  style: context.subtitle2,
-),
-ListTile(
-  title: const Text('See Saved Quotes'),
-  trailing: const Icon(CupertinoIcons.heart),
-  onTap: () {},
-),
-Text(
-  'Would you like a bath?',
-  textAlign: TextAlign.start,
-  style: context.subtitle2,
-),
-SwitchListTile(
-  value: true,
-  onChanged: (v) {},
-  title: const Text('Receive Daily Notifications'),
-),
-Text(
-  'Or, perhaps... would... you... like... to give a start to this repo?',
-  textAlign: TextAlign.start,
-  style: context.subtitle2,
-),
-*/

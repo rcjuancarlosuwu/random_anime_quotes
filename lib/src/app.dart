@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'core/constants/constants.dart';
-import 'core/providers/providers.dart';
-import 'core/theme/kawaii_theme.dart';
+import 'core/constants/constants.dart' show appName;
+import 'core/theme/app_theme.dart';
 import 'features/quotes/view/quote_page.dart';
+import 'features/settings/logic/providers.dart';
 
 class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);
@@ -12,15 +12,15 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
-    final primaryColor = ref.watch(primaryColorProvider);
+    final themeColor = ref.watch(themeColorProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const QuotesPage(),
-      title: kAppName,
+      title: appName,
       themeMode: themeMode,
-      theme: KawaiiTheme.shiro(primaryColor),
-      darkTheme: KawaiiTheme.kuro(primaryColor),
+      theme: AppTheme.light(themeColor),
+      darkTheme: AppTheme.dark(themeColor),
     );
   }
 }

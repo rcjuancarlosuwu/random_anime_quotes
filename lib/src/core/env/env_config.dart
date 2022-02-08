@@ -4,5 +4,5 @@ class EnvConfig {
 
   static const apiToken = '';
 
-  static const apiUrl = 'https://airi.kyoyo.me/api/';
+  static const apiUrl = 'https://animu.ml/api/';
 }

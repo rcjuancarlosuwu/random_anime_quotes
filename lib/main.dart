@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:random_anime_quotes/src/features/quotes/logic/providers.dart';
 
 import 'src/core/constants/constants.dart';
-import 'src/core/providers/providers.dart';
+import 'src/features/settings/logic/providers.dart';
 import 'src/app.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize hive
   await Hive.initFlutter();
-  final quotesBox = await Hive.openBox(kQuotesBoxName);
-  final settingsBox = await Hive.openBox(kSettingsBoxName);
+  // Open Boxes
+  final quotesBox = await Hive.openBox(quotesBoxName);
+  final settingsBox = await Hive.openBox(settingsBoxName);
   runApp(
     ProviderScope(
       overrides: [

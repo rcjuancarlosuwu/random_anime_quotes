@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:random_anime_quotes/src/core/animations/rotate_animation.dart';
 import 'package:random_anime_quotes/src/core/extensions/text_theme_styles_x.dart';
+
 import 'widgets/widgets.dart';
 
 class SettingsBottomSheet extends StatelessWidget {
@@ -27,13 +28,13 @@ class SettingsBottomSheet extends StatelessWidget {
             'Hi, Senpai!',
             style: context.headline4.copyWith(color: theme.primaryColor),
           ),
-          Text('Theme', style: context.subtitle2),
+          const SettingsLabel('Theme'),
           const ThemeOptions(),
-          Text('Primary Color', style: context.subtitle2),
+          const SettingsLabel('Primary Color'),
           const ColorOptions(),
-          Text('Translate to', style: context.subtitle2),
-          const TranslationOptions(),
-          Text('Quotes', style: context.subtitle2),
+          const SettingsLabel('Translate to'),
+          const TranslationDropDown(),
+          const SettingsLabel('Quotes'),
           const LikedQuotesOption(),
         ],
       ),

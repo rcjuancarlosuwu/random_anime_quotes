@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:random_anime_quotes/src/core/extensions/text_theme_styles_x.dart';
 import 'package:random_anime_quotes/src/features/quotes/view/liked_quotes_page.dart';
+import 'package:random_anime_quotes/src/core/extensions/text_theme_styles_x.dart';
 
 class LikedQuotesOption extends StatelessWidget {
   const LikedQuotesOption({Key? key}) : super(key: key);

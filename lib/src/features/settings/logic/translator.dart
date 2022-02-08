@@ -1,22 +1,22 @@
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:translator/translator.dart';
 
-import 'package:random_anime_quotes/src/features/settings/data/datasource/settings_local_datasource.dart';
-import 'package:random_anime_quotes/src/features/quotes/data/models/quote.dart';
+import '../data/datasource/settings_local_datasource.dart';
 
 class Translator {
   Translator({
+    required this.googleTranslator,
     required this.settingsLocalDataSource,
   });
 
-  final GoogleTranslator googleTranslator = GoogleTranslator();
+  final GoogleTranslator googleTranslator;
   final ISettingsLocalDataSource settingsLocalDataSource;
 
-  /// Translate a [Quote] to the specified language.
-  Future<String> translateQuote(String quote) async {
+  /// Translate a [String] to the specified language.
+  Future<String> translateQuote(String text) async {
     try {
       final translation = await googleTranslator.translate(
-        quote,
+        text,
         to: settingsLocalDataSource.getTranslateCode(),
       );
       return translation.text;

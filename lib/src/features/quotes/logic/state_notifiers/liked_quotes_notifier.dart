@@ -1,4 +1,8 @@
-part of 'quote_provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:random_anime_quotes/src/features/quotes/data/models/quote.dart';
+
+import 'package:random_anime_quotes/src/features/quotes/logic/quote_state/quote_state.dart';
+import '../../data/datasource/quotes_local_datasource.dart';
 
 class LikedQuotesNotifier extends StateNotifier<List<Quote>> {
   LikedQuotesNotifier({

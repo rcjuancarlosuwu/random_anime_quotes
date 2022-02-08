@@ -18,6 +18,8 @@ https://user-images.githubusercontent.com/67658540/149021618-7259a4d6-592a-456c-
 
 ✅ Translate to any of the supported languages.
 
+✅ Offline Mode
+
 ## Getting Started
 
 **Step 1:**
@@ -39,7 +41,7 @@ flutter pub get
 
 **Step 3:**
 
-Get your API KEY. _[Click here](https://docs.airi.kyoyo.me/#frequently-asked-questions-faqs)_
+Get your API KEY. _[Click here](https://docs.animu.ml/#frequently-asked-questions-faqs)_
 
 **Step 4:**
 
@@ -51,7 +53,7 @@ class EnvConfig {
 
     static const apiToken = 'your-api-key-here';
     
-    static const apiUrl = 'https://airi.kyoyo.me/api/';
+    static const apiUrl = 'https://animu.ml/api/';
 }
 ```
 
